@@ -32,7 +32,7 @@ public class TruenumbersKafkaProducer {
             throw new TnApiException("Numberspace is empty", "1");
         }
 
-        if (message.getTruespeak().isEmpty() || message.getTruenumbers().size() < 1) {
+        if (message.getTruespeak().isEmpty() && message.getTruenumbers().size() < 1) {
             throw new TnApiException("No truemuber data to create", "2");
         }
         ObjectMapper objectMapper = new ObjectMapper();

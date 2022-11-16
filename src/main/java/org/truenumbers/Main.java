@@ -106,11 +106,13 @@ public class Main {
         final Duration pollTimeout = Duration.ofMillis(100);
 
         try {
+            // create truenumbers that match trigger via api
             tnApiExamples.testCreateTruenumber();
             Integer triggerCount = 0;
             while (triggerCount == 0) {
                 final ConsumerRecords<String, String> consumerRecords = kafkaConsumer.poll(pollTimeout);
                 for (final ConsumerRecord<String, String> consumerRecord : consumerRecords) {
+                    // observe trigger changes
                     KafkaTriggerMessage message = KafkaTriggerMessage.fromKafkaConsumerRecord(consumerRecord);
                     System.out.println("Message " + message.getId() + " " + message.getTruenumbers().get(0).toString() + " " + message.getTruenumbers().get(0).getId());
                     triggerCount++;
@@ -119,10 +121,6 @@ public class Main {
         } catch (WakeupException e) {
             System.out.println(e);
         }
-        // create truenumbers that match trigger via kafka
-        // observe trigger changes
-        // create truenumbers that match trigger via api
-        // observe trigger changes
 
         KafkaProducer producer = buildKafkaProducer();
 
@@ -137,6 +135,7 @@ public class Main {
         kafkaConsumer.subscribe(Collections.singleton(kafkaTriggerDefinition.getDestinations().get(0).getKafkaTopic()));
 
         try {
+            // create truenumbers that match trigger via kafka
             tnProducer.batchCreateTruenumbers(BatchCreateTruenumbersMessage.builder()
                     .numberspace(numberspace)
                     .skipStore(false)
@@ -149,6 +148,7 @@ public class Main {
             Integer triggerCount = 0;
             while (triggerCount == 0) {
                 final ConsumerRecords<String, String> records = kafkaConsumer.poll(pollTimeout);
+                // observe trigger changes
                 for (final ConsumerRecord<String, String> consumerRecord : records) {
                     System.out.println("Got record from kafka create");
                     KafkaTriggerMessage message = KafkaTriggerMessage.fromKafkaConsumerRecord(consumerRecord);

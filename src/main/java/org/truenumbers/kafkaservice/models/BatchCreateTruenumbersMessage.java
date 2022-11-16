@@ -17,11 +17,13 @@ import java.util.List;
 public class BatchCreateTruenumbersMessage {
     protected String numberspace;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @Builder.Default
     protected String truespeak = "";
 
+    @Builder.Default
     protected Boolean skipStore = false;
 
+    @Builder.Default
     @JsonInclude(JsonInclude.Include.NON_NULL)
     protected List<CreateTruenumberPayload> truenumbers = new ArrayList<>();
 }
