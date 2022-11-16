@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="676a9010-f0bd-4319-9fb1-a43dcf55be04" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/examples/TnApiExamples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/examples/TriggerApiExamples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/kafkaservice/TruenumbersKafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/kafkaservice/models/BatchCreateTruenumbersMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/kafkaservice/models/TagTruenumbersMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/TriggerApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/CreateTriggerPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/GetTriggerDefinitionsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/TriggerDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/TriggerDefinitionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/TriggerDestinationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/TriggerDestinationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/TriggerExecutionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerapi/models/TriggerStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerlisteners/kafka/KafkaTriggerListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/triggerlisteners/kafka/KafkaTriggerMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/Truenumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/TruenumberSiValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/TruenumberTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/TruenumberValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/TruenumberValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/TruenumbersApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/UnitPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/CreateNumberspaceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/DeleteTruenumbersResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/GetNumberspacesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/GetTruenumberByIdResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/LimitOffset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/TagTruenumbersResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/TnqlResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/createtruenumbers/CreateManyTruenumbersOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/createtruenumbers/CreateManyTruenumbersResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/createtruenumbers/CreateTruenumberOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/createtruenumbers/CreateTruenumberPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/truenumbersapi/models/createtruenumbers/CreateTruenumberResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/utils/ParameterStringBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/utils/TnApiException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/utils/TnApiResponseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/truenumbers/utils/TruenumberUtils.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GEpSs6bxXHadQRzLuypES5feRz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.truenumbers.truenumbersapi" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="676a9010-f0bd-4319-9fb1-a43dcf55be04" name="Changes" comment="" />
+      <created>1665963600739</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665963600739</updated>
+      <workItem from="1665963602132" duration="3020000" />
+      <workItem from="1666012285884" duration="3403000" />
+      <workItem from="1666017224755" duration="626000" />
+      <workItem from="1666017858574" duration="12477000" />
+      <workItem from="1666101806879" duration="8968000" />
+      <workItem from="1666215006464" duration="913000" />
+      <workItem from="1668126603603" duration="5000" />
+      <workItem from="1668364061073" duration="4217000" />
+      <workItem from="1668523503082" duration="11116000" />
+      <workItem from="1668557821488" duration="158000" />
+      <workItem from="1668607767037" duration="9937000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/truenumbers/utils/ParameterStringBuilder.java</url>
+          <line>7</line>
+          <properties class="org.truenumbers.utils.ParameterStringBuilder" method="getParamsString">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
