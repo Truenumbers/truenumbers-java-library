@@ -1,7 +1,7 @@
-module com.truenumbers.library {
-    exports com.truenumbers.library.truenumbersapi;
-    exports com.truenumbers.library.triggerlisteners.kafka;
-    exports com.truenumbers.library.triggerapi;
-    exports com.truenumbers.library.kafkaservice;
-    exports com.truenumbers.library.shared;
+module com.truenumbers.truenumberslibrary {
+    exports com.truenumbers.truenumbersapi;
+    exports com.truenumbers.triggerlisteners.kafka;
+    exports com.truenumbers.triggerapi;
+    exports com.truenumbers.kafkaservice;
+    exports com.truenumbers.shared;
 }
