@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class KafkaTriggerMessage {
-    protected String id;
+    protected String id; // its the triggers id
     protected TriggerExecutionType triggeredOn;
     protected List<Truenumber> truenumbers;
 

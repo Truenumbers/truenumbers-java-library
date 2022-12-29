@@ -46,7 +46,7 @@ public class Main {
         return consumer;
     }
 
-    private static KafkaProducer    buildKafkaProducer () {
+    private static KafkaProducer buildKafkaProducer () {
 
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);

@@ -69,7 +69,7 @@ public class TriggerApi {
         return new TnApiResponseHandler<>(TriggerDefinitionResponse.class, response).handle();
     }
 
-    public GetTriggerDefinitionsResponse getTriggerDefinitions (TriggerStatus status, String numberspace) throws IOException, URISyntaxException, InterruptedException, TnApiException {
+    public GetTriggerDefinitionsResponse getTriggerDefinitions (TriggerStatus status, String numberspace, String name) throws IOException, URISyntaxException, InterruptedException, TnApiException {
         Map queryParameters = new HashMap();
 
         if (numberspace != null && !numberspace.isEmpty()) {
@@ -78,6 +78,10 @@ public class TriggerApi {
 
         if (status != null) {
             queryParameters.put("status", status.toString());
+        }
+
+        if (name != null) {
+            queryParameters.put("name", name);
         }
 
         URI uri = buildUri("/v1/trigger-definitions?" + ParameterStringBuilder.getParamsString(queryParameters));
@@ -92,6 +96,15 @@ public class TriggerApi {
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         return new TnApiResponseHandler<>(GetTriggerDefinitionsResponse.class, response).handle();
+    }
+
+    // method get trigger by name
+    public GetTriggerDefinitionsResponse getTriggerDefinitions (String numberspace, String name) throws TnApiException, IOException, URISyntaxException, InterruptedException {
+        return getTriggerDefinitions(TriggerStatus.ACTIVE, numberspace,  name);
+    }
+
+    public GetTriggerDefinitionsResponse getTriggerDefinitions (TriggerStatus status, String numberspace) throws TnApiException, IOException, URISyntaxException, InterruptedException {
+        return getTriggerDefinitions(status, numberspace, null);
     }
 
     public GetTriggerDefinitionsResponse getTriggerDefinitions (String numberspace) throws IOException, URISyntaxException, InterruptedException, TnApiException {
