@@ -6,7 +6,7 @@ import com.truenumbers.triggerapi.models.CreateTriggerPayload;
 import com.truenumbers.triggerapi.models.GetTriggerDefinitionsResponse;
 import com.truenumbers.triggerapi.models.TriggerDefinitionResponse;
 import com.truenumbers.utils.ParameterStringBuilder;
-import com.truenumbers.utils.TnApiException;
+import com.truenumbers.shared.TnApiException;
 import com.truenumbers.utils.TnApiResponseHandler;
 import com.truenumbers.utils.TruenumberUtils;
 
@@ -50,7 +50,6 @@ public class TriggerApi {
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println("Response " + response.body());
         return new TnApiResponseHandler<>(TriggerDefinitionResponse.class, response).handle();
     }
 

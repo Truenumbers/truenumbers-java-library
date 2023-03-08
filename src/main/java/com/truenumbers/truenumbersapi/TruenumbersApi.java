@@ -1,19 +1,23 @@
 package com.truenumbers.truenumbersapi;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.truenumbers.utils.ParameterStringBuilder;
+import com.truenumbers.shared.TnApiException;
+import com.truenumbers.utils.TnApiResponseHandler;
 import com.truenumbers.truenumbersapi.models.*;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.*;
-import com.truenumbers.utils.ParameterStringBuilder;
-import com.truenumbers.utils.TnApiException;
-import com.truenumbers.utils.TnApiResponseHandler;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TruenumbersApi {
 
@@ -90,7 +94,26 @@ public class TruenumbersApi {
         queryParameters.put("numberspace", numberspace);
 
         Map bodyMap = new HashMap();
-        bodyMap.put("truenumbers", tnsToCreate);
+
+        List<Map<String, Object>> transformedPayloadList =  Arrays.asList(tnsToCreate.stream().map(payloadItem -> {
+            Map tnPayloadMap = new HashMap<String, Object>();
+            tnPayloadMap.put("subject", payloadItem.getSubject());
+            tnPayloadMap.put("property", payloadItem.getProperty());
+            if (payloadItem.getTags() != null) {
+                tnPayloadMap.put("tags", payloadItem.getTags());
+            }
+
+            if (payloadItem.getValue() != null) {
+                tnPayloadMap.put("value", payloadItem.getValue());
+            }
+            if (payloadItem.getValuePayload() != null) {
+                tnPayloadMap.put("value", payloadItem.getValuePayload());
+            }
+
+            return tnPayloadMap;
+        }).toArray(Map[]::new));
+
+        bodyMap.put("truenumbers", transformedPayloadList);
         bodyMap.put("tags", options.getTags());
         bodyMap.put("noReturn", options.getNoReturn());
         bodyMap.put("skipStore", options.getSkipStore());
@@ -381,6 +404,45 @@ public class TruenumbersApi {
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         return new TnApiResponseHandler<>(GetNumberspacesResponse.class, response).handle();
+    }
+
+    public GetDistinctTruenumberTaxonomiesResponse getDistinctTaxonomyFromQuery (String tnql, TaxonomyType taxonomyType, String numberspace, LimitOffset limitOffset) throws URISyntaxException, IOException, InterruptedException, TnApiException {
+        Map queryParameters = new HashMap();
+        queryParameters.put("limit", limitOffset.getLimit().toString());
+        queryParameters.put("offset", limitOffset.getOffset().toString());
+        queryParameters.put("numberspace", numberspace);
+
+        URI uri = buildUri("/v2/taxonomy/distinct?" +
+                ParameterStringBuilder.getParamsString(queryParameters));
+
+        Map bodyMap = new HashMap();
+        bodyMap.put("taxonomyType", taxonomyType.toString());
+        bodyMap.put("tnql", tnql);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String body = objectMapper.writeValueAsString(bodyMap);
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder(uri)
+                .header("accept", "application/json")
+                .header("content-type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return new TnApiResponseHandler<>(GetDistinctTruenumberTaxonomiesResponse.class, response).handle();
+    }
+
+    public GetDistinctTruenumberTaxonomiesResponse getDistinctTaxonomyFromQuery (TaxonomyType taxonomyType, String numberspace) throws URISyntaxException, IOException, InterruptedException, TnApiException {
+        return getDistinctTaxonomyFromQuery("* has *", taxonomyType, numberspace, new LimitOffset());
+    }
+
+    public GetDistinctTruenumberTaxonomiesResponse getDistinctTaxonomyFromQuery (TaxonomyType taxonomyType, String numberspace, LimitOffset limitOffset) throws URISyntaxException, IOException, InterruptedException, TnApiException {
+        return getDistinctTaxonomyFromQuery("* has *", taxonomyType, numberspace, limitOffset);
+    }
+
+    public GetDistinctTruenumberTaxonomiesResponse getDistinctTaxonomyFromQuery (String tnql, TaxonomyType taxonomyType, String numberspace) throws URISyntaxException, IOException, InterruptedException, TnApiException {
+        return getDistinctTaxonomyFromQuery(tnql, taxonomyType, numberspace, new LimitOffset());
     }
 
     protected URI buildUri(String urlPart) throws URISyntaxException {

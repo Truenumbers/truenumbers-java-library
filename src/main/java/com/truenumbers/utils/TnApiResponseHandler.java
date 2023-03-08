@@ -2,6 +2,7 @@ package com.truenumbers.utils;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.truenumbers.shared.TnApiException;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;

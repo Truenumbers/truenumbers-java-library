@@ -2,7 +2,7 @@ package com.truenumbers.examples;
 
 import com.truenumbers.triggerapi.TriggerApi;
 import com.truenumbers.triggerapi.models.*;
-import com.truenumbers.utils.TnApiException;
+import com.truenumbers.shared.TnApiException;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

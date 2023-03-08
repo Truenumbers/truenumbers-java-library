@@ -1,10 +1,13 @@
 package com.truenumbers.examples;
 
+import com.truenumbers.truenumbersapi.TruenumberValueType;
+import com.truenumbers.truenumbersapi.models.TaxonomyType;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateManyTruenumbersOptions;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
 import com.truenumbers.truenumbersapi.Truenumber;
 import com.truenumbers.truenumbersapi.TruenumbersApi;
-import com.truenumbers.utils.TnApiException;
+import com.truenumbers.shared.TnApiException;
+import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberValuePayload;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -35,6 +38,12 @@ public class TnApiExamples {
         System.out.println("TNQL results " + response.getTruenumbers().size());
     }
 
+    public void testGetDistinctTaxonomyQuery () throws TnApiException, URISyntaxException, IOException, InterruptedException {
+        var response = tnApi.getDistinctTaxonomyFromQuery(TaxonomyType.tags, numberspace);
+        System.out.println("Taxonomy Results size " + response.getTaxonomy().size());
+        System.out.println(response.getTotalTaxonomyCount());
+    }
+
     public void testCreateTruenumbersFromTruespeak () throws TnApiException, IOException, URISyntaxException, InterruptedException {
         var response = tnApi.createTruenumbersFromTruespeak("building has length = 3 m",
                 numberspace,
@@ -51,11 +60,17 @@ public class TnApiExamples {
                 .subject("building")
                 .value("3 m")
                 .build());
+        payload.add(CreateTruenumberPayload.builder()
+                .property("srd_property")
+                .subject("building")
+                .valuePayload(CreateTruenumberValuePayload.builder().value("12345").type(TruenumberValueType.srd).build())
+                .build());
         var response = tnApi.createTruenumbers(payload, numberspace,
                 CreateManyTruenumbersOptions.builder()
                         .skipStore(true)
                         .build());
         System.out.println("Create truenumbers length " + response.getTruenumbers().size());
+        System.out.println("Created truenumber with payload struct " + response.getTruenumbers().get(1).getValue().getType().toString());
     }
 
     public Truenumber testCreateTruenumber() throws TnApiException, IOException, URISyntaxException, InterruptedException {

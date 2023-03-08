@@ -5,7 +5,7 @@ import com.truenumbers.examples.TriggerApiExamples;
 import com.truenumbers.kafkaservice.models.BatchCreateTruenumbersMessage;
 import com.truenumbers.triggerlisteners.kafka.KafkaTriggerMessage;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
-import com.truenumbers.utils.TnApiException;
+import com.truenumbers.shared.TnApiException;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -78,6 +78,8 @@ public class Main {
         Truenumber taggedTruenumber =  tnApiExamples.testGetTruenumberById(createdTruenumber.getId());
         System.out.println("TN ids are the same " + taggedTruenumber.getId().equals(createdTruenumber.getId()) + " " + createdTruenumber.getId());
         System.out.println("Tn tags length should be 2 " + taggedTruenumber.getTags().size());
+
+        tnApiExamples.testGetDistinctTaxonomyQuery();
 
 //        tnApiExamples.testDeleteTruenumberById(taggedTruenumber.getId());
 

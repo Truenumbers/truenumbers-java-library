@@ -1,4 +1,4 @@
-package com.truenumbers.utils;
+package com.truenumbers.shared;
 
 import lombok.Getter;
 
