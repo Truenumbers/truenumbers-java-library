@@ -70,7 +70,7 @@ public class Main {
         TnApiExamples tnApiExamples = new TnApiExamples(numberspace);
 
         tnApiExamples.testTnql();
-        tnApiExamples.testCreateTruenumbersFromTruespeak();
+        tnApiExamples.testCreateTruenumbersFromStatement();
         tnApiExamples.testCreateTruenumbers();
 
         Truenumber createdTruenumber = tnApiExamples.testCreateTruenumber();

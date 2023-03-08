@@ -57,12 +57,12 @@ public class TruenumbersApi {
         return this.tnql(tnql, numberspace, new LimitOffset());
     }
 
-    public CreateManyTruenumbersResponse createTruenumbersFromTruespeak (String truespeak, String numberspace, CreateManyTruenumbersOptions options) throws IOException, URISyntaxException, InterruptedException, TnApiException {
+    public CreateManyTruenumbersResponse createTruenumbersFromStatement (String truenumberStatement, String numberspace, CreateManyTruenumbersOptions options) throws IOException, URISyntaxException, InterruptedException, TnApiException {
         Map queryParameters = new HashMap();
         queryParameters.put("numberspace", numberspace);
 
         Map bodyMap = new HashMap();
-        bodyMap.put("truespeak", truespeak);
+        bodyMap.put("truespeak", truenumberStatement);
         bodyMap.put("tags", options.getTags());
         bodyMap.put("noReturn", options.getNoReturn());
         bodyMap.put("skipStore", options.getSkipStore());
@@ -85,8 +85,8 @@ public class TruenumbersApi {
         return new TnApiResponseHandler<>(CreateManyTruenumbersResponse.class, response).handle();
     }
 
-    public CreateManyTruenumbersResponse createTruenumbersFromTruespeak (String truespeak, String numberspace) throws IOException, URISyntaxException, InterruptedException, TnApiException {
-        return this.createTruenumbersFromTruespeak(truespeak, numberspace, buildDefaultCreateManyOptions());
+    public CreateManyTruenumbersResponse createTruenumbersFromStatement (String truenumberStatement, String numberspace) throws IOException, URISyntaxException, InterruptedException, TnApiException {
+        return this.createTruenumbersFromStatement(truenumberStatement, numberspace, buildDefaultCreateManyOptions());
     }
 
     public CreateManyTruenumbersResponse createTruenumbers(List<CreateTruenumberPayload> tnsToCreate, String numberspace, CreateManyTruenumbersOptions options) throws IOException, URISyntaxException, InterruptedException, TnApiException {

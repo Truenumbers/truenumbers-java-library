@@ -44,8 +44,8 @@ public class TnApiExamples {
         System.out.println(response.getTotalTaxonomyCount());
     }
 
-    public void testCreateTruenumbersFromTruespeak () throws TnApiException, IOException, URISyntaxException, InterruptedException {
-        var response = tnApi.createTruenumbersFromTruespeak("building has length = 3 m",
+    public void testCreateTruenumbersFromStatement () throws TnApiException, IOException, URISyntaxException, InterruptedException {
+        var response = tnApi.createTruenumbersFromStatement("building has length = 3 m",
                 numberspace,
                 CreateManyTruenumbersOptions.builder()
                         .skipStore(true)
