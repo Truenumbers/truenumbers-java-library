@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="979fe713-e23f-47a2-9972-cb89ab9021d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/models/DistinctTaxonomyItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/models/GetDistinctTruenumberTaxonomiesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/models/TaxonomyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/models/createtruenumbers/CreateTruenumberValuePayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/examples/TnApiExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/examples/TnApiExamples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/examples/TriggerApiExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/examples/TriggerApiExamples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/kafkaservice/TruenumbersKafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/kafkaservice/TruenumbersKafkaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/triggerapi/TriggerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/triggerapi/TriggerApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/TruenumbersApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/TruenumbersApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/models/createtruenumbers/CreateTruenumberPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/truenumbersapi/models/createtruenumbers/CreateTruenumberPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/utils/TnApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/shared/TnApiException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/utils/TnApiResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/utils/TnApiResponseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/truenumbers/utils/TruenumberUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/truenumbers/utils/TruenumberUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +74,7 @@
       <workItem from="1672327813013" duration="43000" />
       <workItem from="1672327932195" duration="20000" />
       <workItem from="1678151335461" duration="91000" />
-      <workItem from="1678285795744" duration="6401000" />
+      <workItem from="1678285795744" duration="6444000" />
     </task>
     <servers />
   </component>
