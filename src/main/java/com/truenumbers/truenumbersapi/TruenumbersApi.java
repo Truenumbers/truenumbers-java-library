@@ -95,25 +95,7 @@ public class TruenumbersApi {
 
         Map bodyMap = new HashMap();
 
-        List<Map<String, Object>> transformedPayloadList =  Arrays.asList(tnsToCreate.stream().map(payloadItem -> {
-            Map tnPayloadMap = new HashMap<String, Object>();
-            tnPayloadMap.put("subject", payloadItem.getSubject());
-            tnPayloadMap.put("property", payloadItem.getProperty());
-            if (payloadItem.getTags() != null) {
-                tnPayloadMap.put("tags", payloadItem.getTags());
-            }
-
-            if (payloadItem.getValue() != null) {
-                tnPayloadMap.put("value", payloadItem.getValue());
-            }
-            if (payloadItem.getValuePayload() != null) {
-                tnPayloadMap.put("value", payloadItem.getValuePayload());
-            }
-
-            return tnPayloadMap;
-        }).toArray(Map[]::new));
-
-        bodyMap.put("truenumbers", transformedPayloadList);
+        bodyMap.put("truenumbers", tnsToCreate);
         bodyMap.put("tags", options.getTags());
         bodyMap.put("noReturn", options.getNoReturn());
         bodyMap.put("skipStore", options.getSkipStore());

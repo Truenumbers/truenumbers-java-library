@@ -1,10 +1,7 @@
 package com.truenumbers.truenumbersapi.models.createtruenumbers;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +10,8 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@JsonSerialize
+@NoArgsConstructor
+@JsonSerialize(using = CreateTruenumberPayloadSerializer.class)
 public class CreateTruenumberPayload {
     protected String subject;
     protected String property;

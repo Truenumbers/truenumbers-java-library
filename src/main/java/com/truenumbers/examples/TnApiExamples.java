@@ -55,6 +55,7 @@ public class TnApiExamples {
 
     public void testCreateTruenumbers() throws TnApiException, IOException, URISyntaxException, InterruptedException {
         List<CreateTruenumberPayload> payload = new ArrayList<>();
+
         payload.add(CreateTruenumberPayload.builder()
                 .property("length")
                 .subject("building")

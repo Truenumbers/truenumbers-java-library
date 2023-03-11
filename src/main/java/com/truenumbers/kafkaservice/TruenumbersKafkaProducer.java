@@ -8,6 +8,9 @@ import com.truenumbers.shared.TnApiException;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
+import java.util.List;
+import java.util.Map;
+
 public class TruenumbersKafkaProducer {
 
     protected KafkaProducer producer;
@@ -33,8 +36,10 @@ public class TruenumbersKafkaProducer {
         }
 
         if (message.getTruespeak().isEmpty() && message.getTruenumbers().size() < 1) {
-            throw new TnApiException("No truemuber data to create", "2");
+            throw new TnApiException("No truemuber data " +
+                    "to create", "2");
         }
+
         ObjectMapper objectMapper = new ObjectMapper();
         String body = objectMapper.writeValueAsString(message);
         ProducerRecord record = new ProducerRecord(createTruenumbersTopic, body);
