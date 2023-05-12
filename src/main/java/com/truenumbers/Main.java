@@ -63,7 +63,7 @@ public class Main {
         tn.setId("id");
         tn.setSubject("subject");
         tn.setProperty("property");
-        tn.setTspeak("tspeak");
+        tn.setTrueStatement("tspeak");
         System.out.println("Hello Truenumbers!");
         System.out.println(tn);
 

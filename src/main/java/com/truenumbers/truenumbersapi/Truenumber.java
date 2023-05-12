@@ -16,13 +16,13 @@ public class Truenumber {
     protected String id;
     protected String subject;
     protected String property;
-    protected String tspeak;
-    protected List<TruenumberTag> tags;
+    protected String trueStatement;
+    protected List<String> tags;
     protected TruenumberValue value;
     protected Map<String, String> agent;
 
     @Override
     public String toString() {
-        return tspeak;
+        return trueStatement;
     }
 }
