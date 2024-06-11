@@ -1,12 +1,12 @@
 package com.truenumbers.examples;
 
+import com.truenumbers.shared.TnApiException;
+import com.truenumbers.truenumbersapi.Truenumber;
 import com.truenumbers.truenumbersapi.TruenumberValueType;
+import com.truenumbers.truenumbersapi.TruenumbersApi;
 import com.truenumbers.truenumbersapi.models.TaxonomyType;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateManyTruenumbersOptions;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
-import com.truenumbers.truenumbersapi.Truenumber;
-import com.truenumbers.truenumbersapi.TruenumbersApi;
-import com.truenumbers.shared.TnApiException;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberValuePayload;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class TnApiExamples {
     private String numberspace = "_system:numberspace/test-nard-parser";
-    private TruenumbersApi tnApi = new TruenumbersApi("http://gov.truenumbers.com");
+    private TruenumbersApi tnApi = new TruenumbersApi("http://gov.truenumbers.com/truenumbers-rest-api");
 
     public TnApiExamples () {
 

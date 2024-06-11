@@ -14,6 +14,8 @@ public class CreateTriggerPayload {
     protected String name;
     protected String description;
     protected String tnql;
+    protected TriggerStatus status;
     protected List<TriggerDestinationConfig> destinations;
     protected List<TriggerExecutionType> executeOn;
+    protected List<String> tagOnTrigger;
 }

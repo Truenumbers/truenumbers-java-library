@@ -1,12 +1,12 @@
 package com.truenumbers.triggerapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.truenumbers.triggerapi.models.TriggerStatus;
+import com.truenumbers.shared.TnApiException;
 import com.truenumbers.triggerapi.models.CreateTriggerPayload;
 import com.truenumbers.triggerapi.models.GetTriggerDefinitionsResponse;
 import com.truenumbers.triggerapi.models.TriggerDefinitionResponse;
+import com.truenumbers.triggerapi.models.TriggerStatus;
 import com.truenumbers.utils.ParameterStringBuilder;
-import com.truenumbers.shared.TnApiException;
 import com.truenumbers.utils.TnApiResponseHandler;
 import com.truenumbers.utils.TruenumberUtils;
 
@@ -16,8 +16,8 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class TriggerApi {
 
@@ -68,7 +68,7 @@ public class TriggerApi {
         return new TnApiResponseHandler<>(TriggerDefinitionResponse.class, response).handle();
     }
 
-    public GetTriggerDefinitionsResponse getTriggerDefinitions (TriggerStatus status, String numberspace, String name) throws IOException, URISyntaxException, InterruptedException, TnApiException {
+    public GetTriggerDefinitionsResponse getTriggerDefinitions (List<TriggerStatus> status, String numberspace, String name) throws IOException, URISyntaxException, InterruptedException, TnApiException {
         Map queryParameters = new HashMap();
 
         if (numberspace != null && !numberspace.isEmpty()) {
@@ -76,7 +76,8 @@ public class TriggerApi {
         }
 
         if (status != null) {
-            queryParameters.put("status", status.toString());
+            List<String> statuses = status.stream().map(s -> s.toString()).collect(Collectors.toList());
+            queryParameters.put("status", String.join(",", statuses));
         }
 
         if (name != null) {
@@ -99,15 +100,15 @@ public class TriggerApi {
 
     // method get trigger by name
     public GetTriggerDefinitionsResponse getTriggerDefinitions (String numberspace, String name) throws TnApiException, IOException, URISyntaxException, InterruptedException {
-        return getTriggerDefinitions(TriggerStatus.ACTIVE, numberspace,  name);
+        return getTriggerDefinitions(List.of(TriggerStatus.ACTIVE, TriggerStatus.INACTIVE), numberspace,  name);
     }
 
-    public GetTriggerDefinitionsResponse getTriggerDefinitions (TriggerStatus status, String numberspace) throws TnApiException, IOException, URISyntaxException, InterruptedException {
+    public GetTriggerDefinitionsResponse getTriggerDefinitions (List<TriggerStatus> status, String numberspace) throws TnApiException, IOException, URISyntaxException, InterruptedException {
         return getTriggerDefinitions(status, numberspace, null);
     }
 
     public GetTriggerDefinitionsResponse getTriggerDefinitions (String numberspace) throws IOException, URISyntaxException, InterruptedException, TnApiException {
-        return getTriggerDefinitions(TriggerStatus.ACTIVE, numberspace);
+        return getTriggerDefinitions(List.of(TriggerStatus.ACTIVE, TriggerStatus.INACTIVE), numberspace);
     }
 
     public GetTriggerDefinitionsResponse getTriggerDefinitions () throws IOException, URISyntaxException, InterruptedException, TnApiException {

@@ -1,8 +1,8 @@
 package com.truenumbers.examples;
 
+import com.truenumbers.shared.TnApiException;
 import com.truenumbers.triggerapi.TriggerApi;
 import com.truenumbers.triggerapi.models.*;
-import com.truenumbers.shared.TnApiException;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -44,7 +44,7 @@ public class TriggerApiExamples {
     }
 
     public void testGetTriggerDefinitions () throws TnApiException, IOException, URISyntaxException, InterruptedException {
-        var response = triggerApi.getTriggerDefinitions(TriggerStatus.ACTIVE, numberspace);
+        var response = triggerApi.getTriggerDefinitions(List.of(TriggerStatus.ACTIVE), numberspace);
         System.out.println("Triggers returned count " + response.getTriggerDefinitions().size());
     }
 
