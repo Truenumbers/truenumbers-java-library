@@ -2,10 +2,10 @@ package com.truenumbers.kafkaservice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,10 +2,12 @@ package com.truenumbers;
 
 import com.truenumbers.examples.TnApiExamples;
 import com.truenumbers.examples.TriggerApiExamples;
+import com.truenumbers.kafkaservice.TruenumbersKafkaProducer;
 import com.truenumbers.kafkaservice.models.BatchCreateTruenumbersMessage;
-import com.truenumbers.triggerlisteners.kafka.KafkaTriggerMessage;
-import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
 import com.truenumbers.shared.TnApiException;
+import com.truenumbers.triggerlisteners.kafka.KafkaTriggerMessage;
+import com.truenumbers.truenumbersapi.Truenumber;
+import com.truenumbers.truenumbersapi.models.createtruenumbers.CreateTruenumberPayload;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -15,8 +17,6 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.errors.WakeupException;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
-import com.truenumbers.kafkaservice.TruenumbersKafkaProducer;
-import com.truenumbers.truenumbersapi.Truenumber;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

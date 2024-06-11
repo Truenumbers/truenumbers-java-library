@@ -1,23 +1,22 @@
 package com.truenumbers.truenumbersapi;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.truenumbers.utils.ParameterStringBuilder;
 import com.truenumbers.shared.TnApiException;
-import com.truenumbers.utils.TnApiResponseHandler;
 import com.truenumbers.truenumbersapi.models.*;
 import com.truenumbers.truenumbersapi.models.createtruenumbers.*;
+import com.truenumbers.utils.ParameterStringBuilder;
+import com.truenumbers.utils.TnApiResponseHandler;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TruenumbersApi {
 

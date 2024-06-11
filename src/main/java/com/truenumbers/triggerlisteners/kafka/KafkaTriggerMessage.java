@@ -2,10 +2,10 @@ package com.truenumbers.triggerlisteners.kafka;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Getter;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import com.truenumbers.triggerapi.models.TriggerExecutionType;
 import com.truenumbers.truenumbersapi.Truenumber;
+import lombok.Getter;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import java.io.IOException;
 import java.util.List;

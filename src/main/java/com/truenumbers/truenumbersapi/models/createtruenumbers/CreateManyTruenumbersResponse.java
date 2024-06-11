@@ -1,7 +1,7 @@
 package com.truenumbers.truenumbersapi.models.createtruenumbers;
 
-import lombok.Getter;
 import com.truenumbers.truenumbersapi.Truenumber;
+import lombok.Getter;
 
 import java.util.List;
 

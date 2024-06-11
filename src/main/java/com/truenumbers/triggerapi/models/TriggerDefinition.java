@@ -19,4 +19,6 @@ public class TriggerDefinition {
     protected List<TriggerExecutionType> executeOn;
 
     protected List<TriggerDestinationConfig> destinations;
+
+    protected List<String> tagOnTrigger;
 }

@@ -6,8 +6,6 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CreateTruenumberPayloadSerializer extends StdSerializer<CreateTruenumberPayload> {
     public CreateTruenumberPayloadSerializer() {

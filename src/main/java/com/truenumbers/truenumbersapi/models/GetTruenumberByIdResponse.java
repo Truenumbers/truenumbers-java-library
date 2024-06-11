@@ -1,7 +1,7 @@
 package com.truenumbers.truenumbersapi.models;
 
-import lombok.Getter;
 import com.truenumbers.truenumbersapi.Truenumber;
+import lombok.Getter;
 
 @Getter
 public class GetTruenumberByIdResponse {

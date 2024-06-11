@@ -8,9 +8,6 @@ import com.truenumbers.shared.TnApiException;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
-import java.util.List;
-import java.util.Map;
-
 public class TruenumbersKafkaProducer {
 
     protected KafkaProducer producer;
