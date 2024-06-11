@@ -1,0 +1,16 @@
+//module truenumberslibrary {
+//    opens kafka.clients to kafka.clients;
+//    opens jackson.databind to jackson.databind;
+//
+//    requires static lombok;
+//    requires static jackson.annotations;
+//    requires jackson.databind;
+//    requires java.net.http;
+//    requires kafka.clients;
+//    requires jackson.core;
+//    exports com.truenumbers.truenumbersapi;
+//    exports com.truenumbers.triggerlisteners.kafka;
+//    exports com.truenumbers.triggerapi;
+//    exports com.truenumbers.kafkaservice;
+//    exports com.truenumbers.shared;
+//}

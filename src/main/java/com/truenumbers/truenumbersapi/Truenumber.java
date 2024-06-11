@@ -18,6 +18,7 @@ public class Truenumber {
     protected String property;
     protected String trueStatement;
     protected List<String> tags;
+
     protected TruenumberValue value;
     protected Map<String, String> agent;
     protected Map<String, Map<String, Object>> tagMeta;
